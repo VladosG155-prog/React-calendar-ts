@@ -1,0 +1,67 @@
+.root{
+    background-color: #0F172A;
+    width: 340px;
+    height: 425px;
+    border-radius: 10px;
+    color: #fff;
+    
+    padding: 15px 25px;
+}
+.selects{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & div{
+        width: 48%;
+    }
+}
+.days{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    & span{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        color: #64748B;
+    }
+}
+.hidden{
+    visibility: hidden;
+}
+.dayNumbers{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 12px;
+    margin-top: 10px;
+    & span{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        border-radius: 100%;
+        transition: .3s all ease;
+        margin-right: 12px;
+        text-align: center;
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+        &:hover{
+            background: #3B82F6;
+            color: #fff;
+        }
+        &.active{
+            background: #3B82F6;
+            color: #fff;
+        }
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 0.38px;
+        color: #E2E8F0;
+    }
+}
