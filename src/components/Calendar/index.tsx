@@ -24,18 +24,18 @@ const years = [
 	{ id: 2020, value: 2020, displayValue: '2020' },
 ];
 const months = [
-	{ id: 0, value: 0, displayValue: 'January' },
-	{ id: 1, value: 1, displayValue: 'February' },
-	{ id: 2, value: 2, displayValue: 'March' },
-	{ id: 3, value: 3, displayValue: 'April' },
-	{ id: 4, value: 4, displayValue: 'May' },
-	{ id: 5, value: 5, displayValue: 'June' },
-	{ id: 6, value: 6, displayValue: 'July' },
-	{ id: 7, value: 7, displayValue: 'August' },
-	{ id: 8, value: 8, displayValue: 'September' },
-	{ id: 9, value: 9, displayValue: 'October' },
-	{ id: 10, value: 10, displayValue: 'November' },
-	{ id: 11, value: 11, displayValue: 'December' },
+	{ id: 0, value: 1, displayValue: 'January' },
+	{ id: 1, value: 2, displayValue: 'February' },
+	{ id: 2, value: 3, displayValue: 'March' },
+	{ id: 3, value: 4, displayValue: 'April' },
+	{ id: 4, value: 5, displayValue: 'May' },
+	{ id: 5, value: 6, displayValue: 'June' },
+	{ id: 6, value: 7, displayValue: 'July' },
+	{ id: 7, value: 8, displayValue: 'August' },
+	{ id: 8, value: 9, displayValue: 'September' },
+	{ id: 9, value: 10, displayValue: 'October' },
+	{ id: 10, value: 11, displayValue: 'November' },
+	{ id: 11, value: 12, displayValue: 'December' },
 ];
 const Calendar = ({ value, onChange, locale }: CalendarProps) => {
 	const date = new Date();
@@ -58,14 +58,19 @@ const Calendar = ({ value, onChange, locale }: CalendarProps) => {
 
 	const getDays = (month: number, year: number) => {
 		const resultDays = [];
-		const date = new Date(year, month, 1 - 1);
-		const firstElemDate = new Date(year, month, 1);
-		for (let i = 0; i < firstElemDate.getDay() - 1; i++) {
+		const date = new Date(year, month - 1, 0);
+		const firstElemDate = new Date(year, month - 1, 1);
+
+		for (let i = 0; i <= firstElemDate.getDay() - 2; i++) {
 			resultDays.push(0);
 		}
-		for (let i = 1; i <= Number(date.getDate()); i++) {
+		for (let i = 1; i <= date.getDate(); i++) {
 			resultDays.push(i);
 		}
+
+		console.log('first', firstElemDate);
+		console.log(resultDays);
+		console.log(date);
 		return resultDays;
 	};
 	return (
