@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { RefObject } from 'react';
+import React from 'react';
 import styles from './Select.module.scss';
 interface SelectItem {
 	value: number;

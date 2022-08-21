@@ -40,7 +40,6 @@ const months = [
 const Calendar = ({ value, onChange, locale }: CalendarProps) => {
 	const date = new Date();
 
-	const [selectedDate, setSelectedDate] = React.useState(new Date());
 	const [fullDate, setFullDate] = React.useState<FullDate>({
 		month: date.getMonth(),
 		year: date.getFullYear(),
