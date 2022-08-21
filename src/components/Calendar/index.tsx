@@ -68,9 +68,6 @@ const Calendar = ({ value, onChange, locale }: CalendarProps) => {
 			resultDays.push(i);
 		}
 
-		console.log('first', firstElemDate);
-		console.log(resultDays);
-		console.log(date);
 		return resultDays;
 	};
 	return (
